@@ -1,0 +1,19 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<h2>latest</h2>
+
+{{ latest }}
+
+<h2>date_list</h2>
+
+
+{% for date in date_list %}
+    {{ date|date:"Y" }}
+    {{ date.year }}
+{% endfor %}
+
+{% if is_paginated %}    
+    {% bootstrap_pagination page_obj size="small"  %}
+{% endif %}
